@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه موبایل</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Mobile Menu (Offcanvas) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full transform transition-transform duration-300 translate-x-full">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold">منو</h2>
+                    <button id="close-menu" class="hover:text-gray-900">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Theme Toggle -->
+                <div class="mobile-theme-toggle mb-4">
+                    <span>حالت تاریک</span>
+                    <div class="theme-toggle" id="mobile-theme-toggle" role="button" aria-label="تغییر تم">
+                        <span class="icon sun-icon">☀️</span>
+                        <span class="icon moon-icon">🌙</span>
+                    </div>
+                </div>
+
+                <nav class="space-y-4">
+                    <a href="#" class="block py-2 hover:text-blue-600 border-b border-gray-100">صفحه اصلی</a>
+                    <div class="py-2 border-b border-gray-100">
+                        <button class="flex items-center justify-between w-full hover:text-blue-600">
+                            <span>محصولات</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="pr-4 mt-2 hidden">
+                            <a href="#" class="block py-2 hover:text-blue-600">گوشی‌های اپل</a>
+                            <a href="#" class="block py-2 hover:text-blue-600">گوشی‌های سامسونگ</a>
+                            <a href="#" class="block py-2 hover:text-blue-600">گوشی‌های شیائومی</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block py-2 hover:text-blue-600 border-b border-gray-100">درباره ما</a>
+                    <a href="#" class="block py-2 hover:text-blue-600 border-b border-gray-100">تماس با ما</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="shadow-lg relative z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">فروشگاه موبایل</h1>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="open-menu" class="hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4 space-x-reverse">
+                    <a href="#" class="hover:text-blue-500 px-3 py-2">صفحه اصلی</a>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="menu-item relative">
+                        <button class="hover:text-blue-500 px-3 py-2 flex items-center group">
+                            محصولات
+                            <i class="fas fa-chevron-down mr-1 text-sm transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="grid grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-4">برندها</h3>
+                                    <div class="space-y-4">
+                                        <a href="#" class="flex items-center hover:text-blue-500">
+                                            <img src="https://placehold.co/32x32" alt="Apple" class="w-8 h-8 rounded-full ml-2">
+                                            <span>اپل</span>
+                                        </a>
+                                        <a href="#" class="flex items-center hover:text-blue-500">
+                                            <img src="https://placehold.co/32x32" alt="Samsung" class="w-8 h-8 rounded-full ml-2">
+                                            <span>سامسونگ</span>
+                                        </a>
+                                        <a href="#" class="flex items-center hover:text-blue-500">
+                                            <img src="https://placehold.co/32x32" alt="Xiaomi" class="w-8 h-8 rounded-full ml-2">
+                                            <span>شیائومی</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <img src="https://placehold.co/300x200" alt="Featured" class="rounded-lg shadow-md">
+                                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                                        <h4 class="text-white font-semibold">جدیدترین گوشی‌ها</h4>
+                                        <p class="text-gray-200 text-sm">مشاهده همه محصولات</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="hover:text-blue-500 px-3 py-2">درباره ما</a>
+                    <a href="#" class="hover:text-blue-500 px-3 py-2">تماس با ما</a>
+                    
+                    <!-- Theme Toggle Button -->
+                    <div class="theme-toggle mr-4" id="theme-toggle" role="button" aria-label="تغییر تم">
+                        <span class="icon sun-icon">☀️</span>
+                        <span class="icon moon-icon">🌙</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section pt-8" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hero-content">
+                <h1 class="text-2xl md:text-6xl font-bold mb-4 leading-tight">
+                    بهترین گوشی‌های هوشمند
+                    <span class="block text-blue-400">با قیمت استثنایی</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl">
+                    مجموعه‌ای از برترین برندهای جهانی با گارانتی اصلی و خدمات پس از فروش
+                </p>
+                <div class="flex flex-wrap gap-4 pb-12">
+                    <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200">
+                        مشاهده محصولات
+                    </a>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200">
+                        درباره ما
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    جدیدترین گوشی‌های هوشمند
+                </h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    مجموعه‌ای از برترین برندها با گارانتی اصلی
+                </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="mt-8 flex flex-wrap gap-4 justify-center">
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">همه</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-md hover:bg-gray-100">سامسونگ</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-md hover:bg-gray-100">اپل</button>
+                <button class="px-4 py-2 bg-white text-gray-700 rounded-md hover:bg-gray-100">شیائومی</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="mt-10 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                <!-- Product Card 1 -->
+                <div class="group relative bg-white rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <div class="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/400x500" alt="iPhone 13" class="w-full h-full object-center object-cover">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            آیفون 13 پرو مکس
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            ظرفیت: 256 گیگابایت | رنگ: آبی
+                        </p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-900">89,000,000 تومان</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group relative bg-white rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <div class="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/400x500" alt="Samsung S23" class="w-full h-full object-center object-cover">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            سامسونگ گلکسی S23 اولترا
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            ظرفیت: 512 گیگابایت | رنگ: مشکی
+                        </p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-900">75,000,000 تومان</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group relative bg-white rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <div class="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/400x500" alt="Xiaomi 12" class="w-full h-full object-center object-cover">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            شیائومی 12 پرو
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            ظرفیت: 256 گیگابایت | رنگ: سبز
+                        </p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-900">45,000,000 تومان</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="mt-12 text-center">
+                <button class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    نمایش بیشتر
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">آخرین مقالات</h2>
+                <p class="text-lg text-gray-600">جدیدترین اخبار و مقالات دنیای موبایل</p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="masonry-grid">
+                <!-- Blog Card 1 - Large -->
+                <div class="blog-card large-card">
+                    <div class="relative h-72 rounded-t-xl overflow-hidden">
+                        <img src="https://placehold.co/800x600" alt="Latest iPhone" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">جدیدترین</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar ml-2"></i>
+                            <span>۲ اردیبهشت ۱۴۰۳</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-user ml-2"></i>
+                            <span>علی محمدی</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">بررسی جدیدترین گوشی اپل</h3>
+                        <p class="text-gray-600 mb-4">همه چیز درباره آیفون ۱۵ پرو مکس و قابلیت‌های جدید آن</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                            ادامه مطلب
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 - Small -->
+                <div class="blog-card">
+                    <div class="relative h-48 rounded-t-xl overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Android Tips" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar ml-2"></i>
+                            <span>۱ اردیبهشت ۱۴۰۳</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">ترفندهای مخفی اندروید</h3>
+                        <p class="text-gray-600 mb-4">۱۰ ترفند کاربردی که هر کاربر اندروید باید بداند</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                            ادامه مطلب
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 - Medium -->
+                <div class="blog-card medium-card">
+                    <div class="relative h-56 rounded-t-xl overflow-hidden">
+                        <img src="https://placehold.co/700x500" alt="5G Technology" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm">تکنولوژی</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar ml-2"></i>
+                            <span>۳۰ فروردین ۱۴۰۳</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">همه چیز درباره فناوری 5G</h3>
+                        <p class="text-gray-600 mb-4">آشنایی با نسل پنجم شبکه‌های موبایل و مزایای آن</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                            ادامه مطلب
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 - Small -->
+                <div class="blog-card">
+                    <div class="relative h-48 rounded-t-xl overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Mobile Photography" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar ml-2"></i>
+                            <span>۲۹ فروردین ۱۴۰۳</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">اصول عکاسی با موبایل</h3>
+                        <p class="text-gray-600 mb-4">چگونه با گوشی خود عکس‌های حرفه‌ای بگیریم</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                            ادامه مطلب
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 5 - Medium -->
+                <div class="blog-card medium-card">
+                    <div class="relative h-56 rounded-t-xl overflow-hidden">
+                        <img src="https://placehold.co/700x500" alt="Mobile Security" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">امنیت</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar ml-2"></i>
+                            <span>۲۸ فروردین ۱۴۰۳</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">امنیت گوشی‌های هوشمند</h3>
+                        <p class="text-gray-600 mb-4">راهکارهای محافظت از اطلاعات شخصی در گوشی</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                            ادامه مطلب
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
+                    <span>مشاهده همه مقالات</span>
+                    <i class="fas fa-arrow-left mr-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Reviews Section -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">نظرات مشتریان</h2>
+                <p class="text-lg text-gray-600">تجربه خرید مشتریان از فروشگاه ما</p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="relative">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="User" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
+                            <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="font-semibold text-lg">سارا احمدی</h4>
+                            <div class="flex items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="mr-2 text-sm text-gray-600">۵.۰</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">بهترین تجربه خرید آنلاین رو داشتم. گوشی در سریع‌ترین زمان ممکن به دستم رسید و کیفیت محصول عالی بود.</p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-clock ml-2"></i>
+                        <span>۲ روز پیش</span>
+                        <span class="mx-2">•</span>
+                        <span>خرید: آیفون ۱۳ پرو</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="relative">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="User" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
+                            <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="font-semibold text-lg">امیر حسینی</h4>
+                            <div class="flex items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                </div>
+                                <span class="mr-2 text-sm text-gray-600">۴.۵</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">پشتیبانی عالی و راهنمایی خوب برای انتخاب گوشی مناسب. فقط ای کاش گارانتی طولانی‌تری داشت.</p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-clock ml-2"></i>
+                        <span>۱ هفته پیش</span>
+                        <span class="mx-2">•</span>
+                        <span>خرید: سامسونگ S23</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="relative">
+                            <img src="https://i.pravatar.cc/150?img=44" alt="User" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
+                            <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="font-semibold text-lg">مریم کریمی</h4>
+                            <div class="flex items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="far fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="mr-2 text-sm text-gray-600">۴.۰</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">قیمت‌ها نسبت به بازار مناسب‌تر بود و ارسال سریع انجام شد. بسته‌بندی محصول هم خیلی خوب بود.</p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-clock ml-2"></i>
+                        <span>۲ هفته پیش</span>
+                        <span class="mx-2">•</span>
+                        <span>خرید: شیائومی ۱۲</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Stats -->
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">۴.۸</div>
+                        <div class="flex items-center justify-center mb-2">
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400 text-xl"></i>
+                        </div>
+                        <p class="text-gray-600">میانگین امتیاز</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">۹۵٪</div>
+                        <div class="text-3xl text-green-500 mb-2">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <p class="text-gray-600">رضایت مشتریان</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">۱۰۰۰+</div>
+                        <div class="text-3xl text-blue-500 mb-2">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p class="text-gray-600">نظر ثبت شده</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Carousel Section -->
+    <section class="py-16 bg-gradient-to-r from-gray-50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">برندهای همکار</h2>
+                <p class="text-lg text-gray-600">معتبرترین برندهای جهانی با گارانتی اصلی</p>
+            </div>
+
+            <!-- Brands Slider -->
+            <div class="brands-slider relative">
+                <div class="flex animate-scroll">
+                    <!-- First Set -->
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Apple" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Samsung" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Xiaomi" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Huawei" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="OnePlus" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <!-- Duplicate Set for Infinite Scroll -->
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Apple" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Samsung" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Xiaomi" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="Huawei" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://placehold.co/200x100" alt="OnePlus" class="h-20 object-contain mx-8 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-0 left-0 w-40 h-40 bg-white opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-60 h-60 bg-white opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mb-4">
+                    عضویت در خبرنامه
+                </h2>
+                <p class="text-lg text-blue-100 mb-8">
+                    با عضویت در خبرنامه ما از آخرین تخفیف‌ها و محصولات جدید باخبر شوید
+                </p>
+
+                <form class="newsletter-form relative max-w-lg mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex-1 relative">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                <i class="fas fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" 
+                                   class="w-full px-12 py-4 bg-white bg-opacity-20 border-2 border-white border-opacity-20 rounded-xl text-white placeholder-blue-100 focus:outline-none focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-30 transition-all"
+                                   placeholder="ایمیل خود را وارد کنید"
+                                   dir="ltr">
+                        </div>
+                        <button type="submit" 
+                                class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-xl hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 transition-all transform hover:scale-105">
+                            <span>عضویت</span>
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </button>
+                    </div>
+                    <div class="mt-4 flex items-center justify-center text-sm text-blue-100">
+                        <i class="fas fa-shield-alt ml-2"></i>
+                        <span>اطلاعات شما نزد ما محفوظ خواهد ماند</span>
+                    </div>
+                </form>
+
+                <!-- Social Links -->
+                <div class="mt-12">
+                    <div class="flex justify-center space-x-6 space-x-reverse">
+                        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                            <i class="fab fa-telegram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Categories Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">دسته‌بندی محصولات</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    محصولات ما در دسته‌بندی‌های مختلف با گارانتی اصلی و خدمات پس از فروش در دسترس شما هستند
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Category 1 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="گوشی‌های اپل" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">گوشی‌های اپل</h3>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="گوشی‌های سامسونگ" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">گوشی‌های سامسونگ</h3>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="گوشی‌های شیائومی" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">گوشی‌های شیائومی</h3>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="لوازم جانبی" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">لوازم جانبی</h3>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="گجت‌های هوشمند" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">گجت‌های هوشمند</h3>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="category-story">
+                    <div class="story-ring">
+                        <div class="story-content">
+                            <img src="https://placehold.co/200x200" alt="تعمیرات" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center font-medium">تعمیرات</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Separator -->
+    <div class="wave-separator">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37, 99, 235, 0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(37, 99, 235, 0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(37, 99, 235, 0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#2563eb" />
+            </g>
+        </svg>
+    </div>
+
+    
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <div class="grid grid-cols-4 gap-1">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>خانه</span>
+            </a>
+            <a href="#products" class="nav-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>محصولات</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span>سبد خرید</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>پروفایل</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative bg-gradient-to-b from-blue-600 to-blue-900 text-white overflow-hidden">
+        <!-- Animated Background Waves -->
+        <div class="footer-waves">
+            <div class="footer-wave wave-1"></div>
+            <div class="footer-wave wave-2"></div>
+            <div class="footer-wave wave-3"></div>
+            <div class="footer-wave wave-4"></div>
+        </div>
+
+        <div class="relative z-10">
+            <!-- Footer Content -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Section -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">فروشگاه موبایل</h3>
+                        <p class="text-blue-100 leading-relaxed mb-6">
+                            ما با ارائه بهترین محصولات و خدمات، همراه شما در دنیای دیجیتال هستیم.
+                        </p>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="footer-social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="footer-social-link">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="footer-social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">دسترسی سریع</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="footer-link">
+                                    <i class="fas fa-chevron-left ml-2"></i>
+                                    صفحه اصلی
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">
+                                    <i class="fas fa-chevron-left ml-2"></i>
+                                    محصولات
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">
+                                    <i class="fas fa-chevron-left ml-2"></i>
+                                    درباره ما
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">
+                                    <i class="fas fa-chevron-left ml-2"></i>
+                                    تماس با ما
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">اطلاعات تماس</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 ml-3 text-blue-300"></i>
+                                <span class="text-blue-100">تهران، خیابان ولیعصر، مرکز خرید موبایل</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt ml-3 text-blue-300"></i>
+                                <span class="text-blue-100" dir="ltr">021-12345678</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope ml-3 text-blue-300"></i>
+                                <span class="text-blue-100" dir="ltr">info@mobileshop.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">ساعات کاری</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center">
+                                <span class="text-blue-100">شنبه تا چهارشنبه</span>
+                                <span class="text-blue-300">9:00 - 21:00</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-blue-100">پنجشنبه</span>
+                                <span class="text-blue-300">9:00 - 19:00</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-blue-100">جمعه</span>
+                                <span class="text-blue-300">تعطیل</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="mt-12 pt-8 border-t border-blue-500/30">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-blue-100 text-center md:text-right mb-4 md:mb-0">
+                            © تمامی حقوق برای فروشگاه موبایل محفوظ است
+                        </p>
+                          <p class="text-blue-100 text-center md:text-right mb-4 md:mb-0">
+                                طراحی شده توسط امین حسین پور 
+                        </p>
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <img src="https://placehold.co/40x25" alt="enamad" class="h-16 rounded bg-white p-1">
+                            <img src="https://placehold.co/40x25" alt="samandehi" class="h-16 rounded bg-white p-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

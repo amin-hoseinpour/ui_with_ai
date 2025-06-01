@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش وردپرس فارسی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: translateY(-5px);
+        }
+        
+        .animated-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-800">آموزش وردپرس</h1>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">خانه</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">دوره‌ها</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">مقالات</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">تماس</a>
+                </nav>
+                
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <button class="p-2 text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-user ml-2"></i>
+                        ورود / عضویت
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="animated-bg py-16 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex-1 max-w-lg">
+                    <h2 class="text-4xl font-bold mb-4">وردپرس فارسی به زبان ساده</h2>
+                    <p class="text-lg mb-6 opacity-90">
+                        به بهترین وردپرس خوش آمدید، اینجا یه جای خیلی ساده و ساده میتونی وردپرس رو از پایه تا پیشرفته یاد بگیری.
+                    </p>
+                    <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        راهنمای ورود به مسیر
+                    </button>
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="bg-white bg-opacity-20 rounded-full p-8 inline-block">
+                        <div class="bg-yellow-400 rounded-full p-6">
+                            <i class="fab fa-wordpress text-6xl text-blue-800"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Courses -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">آخرین دوره های وردپرس</h3>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+                    تمامی دوره ها
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-orange-400 to-red-500 rounded-xl p-6 text-white hover-scale card-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold">استفاده از CDN</h4>
+                        <i class="fas fa-server text-2xl"></i>
+                    </div>
+                    <p class="text-sm opacity-90 mb-4">مثل ارتودنتو کردن</p>
+                    <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition">
+                        مشاهده دوره
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-xl p-6 text-white hover-scale card-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold">راه اندازی Cloudflare</h4>
+                        <i class="fas fa-cloud text-2xl"></i>
+                    </div>
+                    <p class="text-sm opacity-90 mb-4">روی سایت وردپرسی</p>
+                    <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition">
+                        مشاهده دوره
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl p-6 text-white hover-scale card-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold">الگوریتم رنک گوگل</h4>
+                        <i class="fab fa-google text-2xl"></i>
+                    </div>
+                    <p class="text-sm opacity-90 mb-4">Google Dance</p>
+                    <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition">
+                        مشاهده دوره
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Template -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">قالب وردپرس آموزا</h3>
+                    <p class="text-gray-600 mb-4">قالبی برای ایجاد سایت آموزشی</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-lg ml-3">
+                                <i class="fas fa-star text-blue-600"></i>
+                            </div>
+                            <span class="font-medium">صفحه ساز آنقدرهو</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-lg ml-3">
+                                <i class="fas fa-mobile-alt text-green-600"></i>
+                            </div>
+                            <span class="font-medium">سرعت بارگزاری</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-purple-100 p-2 rounded-lg ml-3">
+                                <i class="fas fa-palette text-purple-600"></i>
+                            </div>
+                            <span class="font-medium">سئو شده برای گوگل</span>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 transition">
+                        دریافت قالب
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl p-8 text-white">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-4">
+                            <div class="bg-white h-4 rounded mb-2"></div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-white bg-opacity-50 h-12 rounded"></div>
+                                <div class="bg-white bg-opacity-50 h-12 rounded"></div>
+                                <div class="bg-white bg-opacity-50 h-12 rounded"></div>
+                            </div>
+                            <div class="bg-white bg-opacity-50 h-8 rounded mt-2"></div>
+                        </div>
+                        <h4 class="font-bold text-lg">آموزا</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">مقالات آموزشی</h3>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+                    مشاهده همه
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-orange-400 to-red-500 h-32 flex items-center justify-center">
+                        <i class="fas fa-code text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">چطور میتونی بدون مدیریت وردپرس نصب و اجرا کنی</h4>
+                        <p class="text-gray-600 text-sm">آموزش کامل و قدم به قدم</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-teal-400 to-blue-500 h-32 flex items-center justify-center">
+                        <i class="fab fa-wordpress text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">چنینیا</h4>
+                        <p class="text-gray-600 text-sm">آموزش جانبی آفت آفرین وردپرس</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-500 h-32 flex items-center justify-center">
+                        <i class="fas fa-rocket text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">هوستینگ</h4>
+                        <p class="text-gray-600 text-sm">بهترین هاست برای وردپرس</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Plugins -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-gray-800 text-center mb-12">افزونه‌های ضروری وردپرس</h3>
+            <p class="text-gray-600 text-center mb-8">همه آن که یادبگیری متعهد</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+                <div class="bg-teal-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-teal-500 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">هوستا</h4>
+                    <p class="text-xs text-gray-600">مدیریت بکاپ</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-gray-800 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">ووکامرس</h4>
+                    <p class="text-xs text-gray-600">فروشگاه ساز</p>
+                </div>
+                
+                <div class="bg-green-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-green-500 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">یُستا</h4>
+                    <p class="text-xs text-gray-600">بهینه سازی سئو</p>
+                </div>
+                
+                <div class="bg-blue-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-blue-500 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">پیچ بچت</h4>
+                    <p class="text-xs text-gray-600">صفحه ساز</p>
+                </div>
+                
+                <div class="bg-red-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-red-500 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">المنتور</h4>
+                    <p class="text-xs text-gray-800">صفحه ساز پیشرفته</p>
+                </div>
+                
+                <div class="bg-orange-100 p-6 rounded-xl text-center hover-scale">
+                    <div class="bg-orange-500 text-white p-3 rounded-full inline-block mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-800">میهن پنل</h4>
+                    <p class="text-xs text-gray-600">شتاب و بهینه سازی</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WordPress Templates -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">قالب وردپرس</h3>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+                    همه قالب ها
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-gray-400 to-gray-600 h-40 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">قالب وردپرس Blockdok Business</h4>
+                        <p class="text-gray-600 text-sm">(جدیدترین)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 h-40 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">قالب وردپرس Blockdok Education</h4>
+                        <p class="text-gray-600 text-sm">(جدیدترین)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="bg-gradient-to-br from-blue-500 to-teal-500 h-40 flex items-center justify-center text-white text-center">
+                        <div>
+                            <h4 class="font-bold text-2xl">قالب وردپرس آموزا</h4>
+                            <p class="text-sm opacity-90">پکیج کامل آموزشی</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-gray-800 mb-2">قالب وردپرس آموزا</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-xl mb-4">همراه ما باشید</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="bg-blue-500 p-3 rounded-lg hover:bg-blue-600 transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-pink-500 p-3 rounded-lg hover:bg-pink-600 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-red-500 p-3 rounded-lg hover:bg-red-600 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-4">اطمینان به اعتبار ما</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        تا کنون بیش از ۱۰۰۰۰ مخاطب پیوسته اند و ۱۰۰۰ سایت وردپرسی با محتوای ما ساخته شده است.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-4">داستان ما</h4>
+                    <p class="text-gray-300 text-sm">
+                        از سال ۱۳۹۴ شروع کرده و تا کنون بیش از ۱۰۰ مقاله آموزشی و ۳۰ دوره آموزشی تولید کرده‌ایم.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; ۱۴۰۳ - تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroSection = document.querySelector('.animated-bg');
+            if (heroSection) {
+                heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add loading animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-scale').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

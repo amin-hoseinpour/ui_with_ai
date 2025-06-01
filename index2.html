@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود و ثبت نام - میناچتر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        .login-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .input-field {
+            background: rgba(249, 250, 251, 0.8);
+            border: 2px solid rgba(229, 231, 235, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            background: white;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-google {
+            background: white;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-google:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-label {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: transparent;
+            padding: 0 4px;
+        }
+        
+        .input-wrapper input:focus + .floating-label,
+        .input-wrapper input:not(:placeholder-shown) + .floating-label {
+            top: 0;
+            font-size: 12px;
+            color: #3b82f6;
+            background: white;
+        }
+        
+        .security-code {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px dashed #d1d5db;
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .persian-temple {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="templeGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23c084fc;stop-opacity:1" /><stop offset="100%" style="stop-color:%236366f1;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23templeGrad)"/><g fill="%23fbbf24" opacity="0.3"><rect x="50" y="200" width="20" height="80"/><rect x="80" y="190" width="20" height="90"/><rect x="110" y="185" width="20" height="95"/><rect x="140" y="180" width="20" height="100"/><rect x="170" y="175" width="20" height="105"/><rect x="200" y="170" width="20" height="110"/><rect x="230" y="175" width="20" height="105"/><rect x="260" y="180" width="20" height="100"/><rect x="290" y="185" width="20" height="95"/><rect x="320" y="190" width="20" height="90"/><rect x="350" y="200" width="20" height="80"/></g><rect x="100" y="150" width="200" height="30" fill="%23fbbf24" opacity="0.4"/><rect x="150" y="180" width="100" height="60" fill="%23f59e0b" opacity="0.6"/></svg>') center/cover;
+        }
+    </style>
+</head>
+<body class="login-bg">
+    <div class="min-h-screen flex">
+        <!-- Left Side - Temple Image -->
+        <div class="hidden lg:flex lg:w-1/2 items-center justify-center p-8">
+            <div class="persian-temple w-full h-96 rounded-2xl shadow-2xl flex items-center justify-center">
+                <div class="text-center text-white">
+                    <div class="mb-4">
+                        <i class="fas fa-university text-6xl opacity-70"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-2">به پلتفرم ما خوش آمدید</h2>
+                    <p class="text-lg opacity-90">تجربه‌ای نو در دنیای دیجیتال</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side - Login Form -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+            <div class="form-container rounded-2xl shadow-2xl p-8 w-full max-w-md slide-in">
+                <!-- Logo and Header -->
+                <div class="text-center mb-8 fade-in">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-full ml-3">
+                            <i class="fas fa-comments text-xl"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold text-gray-800">میناچتر</h1>
+                    </div>
+                    
+                   
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6 fade-in">
+                    <!-- Username/Email Field -->
+                    <div class="input-wrapper relative">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            class="input-field w-full px-4 py-3 rounded-lg focus:outline-none" 
+                            placeholder=" "
+                            required
+                        >
+                        <label for="username" class="floating-label">نام کاربری، ایمیل یا شماره تلفن</label>
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div class="input-wrapper relative">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="input-field w-full px-4 py-3 rounded-lg focus:outline-none pl-12" 
+                            placeholder=" "
+                            required
+                        >
+                        <label for="password" class="floating-label">رمز عبور</label>
+                        <button type="button" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword()">
+                            <i id="passwordIcon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Security Code -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">کد امنیتی</label>
+                        <div class="flex items-center gap-4">
+                            <input 
+                                type="text" 
+                                id="securityCode" 
+                                class="input-field flex-1 px-4 py-3 rounded-lg focus:outline-none" 
+                                placeholder="کد امنیتی را وارد کنید"
+                                required
+                            >
+                            <div class="security-code px-6 py-3 rounded-lg font-bold text-xl text-gray-700 select-none">
+                                12485
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Remember Me -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="ml-2 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <span class="text-sm text-gray-600">مرا به خاطر بسپار</span>
+                        </label>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-800">فراموشی رمز عبور؟</a>
+                    </div>
+                    
+                    <!-- Login Button -->
+                    <button type="submit" class="btn-primary w-full py-3 rounded-lg text-white font-semibold">
+                        <i class="fas fa-sign-in-alt ml-2"></i>
+                        ورود با عضویت
+                    </button>
+                    
+                    <!-- Divider -->
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">یا</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Login -->
+                    <button type="button" class="btn-google w-full py-3 rounded-lg font-semibold text-gray-700 flex items-center justify-center">
+                        <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        ورود با حساب گوگل
+                    </button>
+                </form>
+                
+                <!-- Footer -->
+                <div class="mt-8 text-center fade-in">
+                    <p class="text-sm text-gray-600">
+                        حساب کاربری ندارید؟ 
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold" onclick="toggleForm()">ثبت نام کنید</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const passwordIcon = document.getElementById('passwordIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const securityCode = document.getElementById('securityCode').value;
+            
+            // Simple validation
+            if (!username || !password || !securityCode) {
+                alert('لطفاً تمامی فیلدها را پر کنید');
+                return;
+            }
+            
+            if (securityCode !== '12485') {
+                alert('کد امنیتی اشتباه است');
+                return;
+            }
+            
+            // Simulate login process
+            const button = e.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>در حال ورود...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                alert('ورود موفقیت‌آمیز بود!');
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        });
+
+        // Generate random security code
+        function generateSecurityCode() {
+            const code = Math.floor(10000 + Math.random() * 90000);
+            document.querySelector('.security-code').textContent = code;
+        }
+
+        // Refresh security code on click
+        document.querySelector('.security-code').addEventListener('click', generateSecurityCode);
+
+        // Add floating label animation
+        document.querySelectorAll('.input-wrapper input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Add entrance animation delay
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Toggle between login and signup forms
+        function toggleForm() {
+            alert('فرم ثبت نام در حال توسعه است');
+        }
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+
+    <style>
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
